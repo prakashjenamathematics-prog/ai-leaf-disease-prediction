@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detect Disease</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<!-- HEADER -->
+<header class="app-header">
+    <h1>🌿 LeafGuard AI – Disease Detection</h1>
+</header>
+
+<div class="center">
+    <div class="card">
+        <h2>📸 Plant Disease Detection</h2>
+
+        <!-- Upload from gallery -->
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*">
+            <button class="btn" type="submit">Upload Image</button>
+        </form>
+
+        <hr><br>
+
+        <!-- Camera -->
+        <video id="camera" autoplay></video>
+        <button class="btn" onclick="startCamera()">Open Camera</button>
+        <button class="btn" onclick="capture()">Capture & Predict</button>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <br><br>
+        <a href="/" class="btn">⬅ Back</a>
+    </div>
+</div>
+
+<script src="/static/js/camera.js"></script>
+<!-- FOOTER -->
+<footer class="app-footer">
+    <p>Made by Prakash Jena</p>
+</footer>
+
+</body>
+</html>

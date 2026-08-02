@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Prediction Result</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+<header class="app-header">
+    <h1>🌿 LeafGuard AI – Disease Detection</h1>
+</header>
+
+<div class="center">
+
+    <div class="result-wrapper">
+
+        <!-- RESULT BOXES -->
+        <div class="result-container">
+
+            <!-- BOX 1 : IMAGE + DISEASE -->
+            <div class="result-card">
+                <h2>🧠 AI Prediction</h2>
+
+                
+
+                <p><b>Disease:</b> <span id="disease"></span></p>
+                <p><b>Confidence:</b> <span id="confidence"></span>%</p>
+            </div>
+
+            <!-- BOX 2 : PRECAUTIONS -->
+            <div class="precaution-card">
+                <h2>🌱 AI-Generated Precautions</h2>
+                <p id="precautions"></p>
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="result-actions">
+            <a href="/detect" class="btn action-btn">🔁 Detect Another</a>
+            <a href="/" class="btn action-btn">🏠 Home</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+fetch("/result-data")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("disease").innerText = data.disease;
+    document.getElementById("confidence").innerText = data.confidence;
+    document.getElementById("precautions").innerText = data.precautions;
+});
+</script>
+<!-- FOOTER -->
+<footer class="app-footer">
+    <p>Made by Prakash Jena</p>
+</footer>
+
+</body>
+</html>

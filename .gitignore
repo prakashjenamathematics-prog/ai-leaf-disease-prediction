@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Dataset
+Plant_leave_diseases_dataset_with_augmentation/
+
+# Trained models
+*.h5
+*.keras
+*.pt
+*.pth
+
+# Environment files
+.env
+
+# VS Code
+.vscode/

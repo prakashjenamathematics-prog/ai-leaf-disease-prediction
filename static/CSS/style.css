@@ -1,0 +1,270 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   BASE LAYOUT
+========================= */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideshow 40s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+/* =========================
+   SLIDESHOW
+========================= */
+@keyframes slideshow {
+    0% { background-image: url("/static/images/bg1.jpg"); }
+    25% { background-image: url("/static/images/bg2.jpg"); }
+    50% { background-image: url("/static/images/bg3.jpg"); }
+    75% { background-image: url("/static/images/bg4.jpg"); }
+    100% { background-image: url("/static/images/bg1.jpg"); }
+}
+
+/* =========================
+   HEADER
+========================= */
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #145c32, #1fa55b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.app-header h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.app-footer p {
+    color: #eee;
+    font-size: 14px;
+}
+
+/* =========================
+   CENTER
+========================= */
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*LOGIN / OTP CARD (EMAIL PAGE)*/
+.card {
+    background: #ffffff;
+    width: 460px;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.4);
+    animation: fadeUp 0.6s ease-in-out;
+}
+
+.card h2 {
+    font-size: 28px;
+    color: #0fa459;
+    margin-bottom: 25px;
+}
+
+.card p {
+    font-size: 20px;
+    color: #a72f2f;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    height: 52px;
+    padding: 12px;
+    font-size: 17px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    width: 100%;
+    height: 52px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #1a7f45, #2fbf71);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #166b3a, #28a863);
+}
+
+/* =========================
+   RESULT PAGE
+========================= */
+.result-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1000px;
+}
+
+/* LEFT BOX */
+.result-card {
+    width: 420px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    text-align: center;
+}
+
+.result-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0b5e2e;
+}
+
+.result-card p {
+    font-size: 20px;
+    color: #010101;
+    margin: 10px 0;
+}
+
+/* IMAGE */
+.result-image {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #1a7f45;
+}
+
+/* RIGHT BOX */
+.precaution-card {
+    width: 460px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.precaution-card h2 {
+    font-size: 22px;
+    color: #0b5e2e;
+    margin-bottom: 12px;
+}
+
+.precaution-card p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.result-actions {
+    margin-top: 35px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.action-btn {
+    width: 240px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .result-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-card,
+    .precaution-card {
+        width: 90%;
+    }
+
+    .action-btn {
+        width: 90%;
+    }
+}
